@@ -1,0 +1,30 @@
+[System]
+Name='METH'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='input1'
+Range=[40 110]
+NumMFs=3
+MF1='low':'trapmf',[40 40 50 70]
+MF2='average':'trapmf',[50 70 80 90]
+MF3='high':'trapmf',[80 90 110 110]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=3
+MF1='mf1':'trimf',[-0.4 0 0.4]
+MF2='mf2':'trimf',[0.1 0.5 0.9]
+MF3='mf3':'trimf',[0.6 1 1.4]
+
+[Rules]
